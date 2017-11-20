@@ -1,0 +1,3 @@
+[submodule "ChatWow"]
+	path = ChatWow
+	url = git@git.loopon.com:Resende/ChatWow.git
