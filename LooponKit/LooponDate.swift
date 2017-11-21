@@ -19,30 +19,52 @@ public struct LooponDate: Codable
 		return formatter
 	}()
 
+	public static var isoDateWithTimeFormatter: DateFormatter =
+	{
+		let formatter = DateFormatter()
+		// See: http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
+		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+		return formatter
+	}()
+
+	public static var isoDateWithFractionalTimeFormatter: DateFormatter =
+	{
+		let formatter = DateFormatter()
+		// See: http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
+		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZZZ"
+		return formatter
+	}()
+
 	/// The actual date represented by this object.
-	let date: Date
+	public let date: Date
+
+	/// The mode used to decode, or that should be used to encode, this date.
+	public let formatMode: Mode
 
 	/// Initializes with the current time and date.
-	public init()
+	public init(formatMode: Mode = .dateOnly)
 	{
 		self.date = Date()
+		self.formatMode = formatMode
 	}
 
 	/// Initializes with the given date value.
-	public init(date: Date)
+	public init(date: Date, formatMode: Mode = .dateOnly)
 	{
 		self.date = date
+		self.formatMode = formatMode
 	}
 
 	/// Initializes with the given ISO8601-formatted string.
 	public init?(isoString: String)
 	{
-		guard let date = LooponDate.isoDateFormatter.date(from: isoString) else
+		guard let (mode, date) = LooponDate.tryDecode(isoString) else
 		{
 			return nil
 		}
 
 		self.date = date
+		self.formatMode = mode
 	}
 
 	/// Initializes looking for an ISO8601-formatted string in the encoder as a single-value container (no keys).
@@ -51,14 +73,13 @@ public struct LooponDate: Codable
 		let container = try decoder.singleValueContainer()
 		let isoString = try container.decode(String.self)
 
-		guard
-			let date = LooponDate.isoDateFormatter.date(from: isoString)
-			else
+		guard let (mode, date) = LooponDate.tryDecode(isoString) else
 		{
-			throw DecodingError.dataCorruptedError(in: container, debugDescription: "String is not ISO8601 formatted.")
+			throw DecodingError.dataCorruptedError(in: container, debugDescription: "String is not ISO8601 formatted: \(isoString)")
 		}
 
 		self.date = date
+		self.formatMode = mode
 	}
 
 	/// Encodes the contained Date object into the encoder as a single-value container using the ISO8601 format.
@@ -67,66 +88,36 @@ public struct LooponDate: Codable
 		var container = encoder.singleValueContainer()
 		try container.encode(LooponDate.isoDateFormatter.string(from: self.date))
 	}
-}
 
-/// Type that wraps a Date with Time object with encoding/decoding routines compatible with Loopon's API.
-public struct LooponDateWithTime: Codable
-{
-	public static var isoDateWithTimeFormatter: DateFormatter =
+	public enum Mode
 	{
-		let formatter = DateFormatter()
-		// See: http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
-		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-		formatter.timeZone = TimeZone(identifier: "Zulu")
-		return formatter
-	}()
+		/// Date only. Example: 2017-11-19
+		case dateOnly
 
-	/// The actual date represented by this object.
-	let date: Date
+		/// Date and Time. Example: 2017-11-20T01:42:41Z
+		case dateWithTime
 
-	/// Initializes with the current time and date.
-	public init()
-	{
-		self.date = Date()
+		/// Date and Fractional Time. Example: 2017-11-21T17:50:48.813225Z
+		case dateWithFractionalTime
 	}
 
-	/// Initializes with the given date value.
-	public init(date: Date)
+	private static func tryDecode(_ string: String) -> (Mode, Date)?
 	{
-		self.date = date
-	}
+		let modes: [Mode: DateFormatter] = [
+			.dateOnly: LooponDate.isoDateFormatter,
+			.dateWithTime: LooponDate.isoDateWithTimeFormatter,
+			.dateWithFractionalTime: LooponDate.isoDateWithFractionalTimeFormatter
+		]
 
-	/// Initializes with the given ISO8601-formatted string.
-	public init?(isoString: String)
-	{
-		guard let date = LooponDateWithTime.isoDateWithTimeFormatter.date(from: isoString) else
+		for (mode, formatter) in modes
 		{
-			return nil
+			if let dateForMode = formatter.date(from: string)
+			{
+				return (mode, dateForMode)
+			}
 		}
 
-		self.date = date
-	}
-
-	/// Initializes looking for an ISO8601-formatted string in the encoder as a single-value container (no keys).
-	public init(from decoder: Decoder) throws
-	{
-		let container = try decoder.singleValueContainer()
-		let isoString = try container.decode(String.self)
-
-		guard
-			let date = LooponDateWithTime.isoDateWithTimeFormatter.date(from: isoString)
-			else
-		{
-			throw DecodingError.dataCorruptedError(in: container, debugDescription: "String is not ISO8601 formatted.")
-		}
-
-		self.date = date
-	}
-
-	/// Encodes the contained Date object into the encoder as a single-value container using the ISO8601 format.
-	public func encode(to encoder: Encoder) throws
-	{
-		var container = encoder.singleValueContainer()
-		try container.encode(LooponDateWithTime.isoDateWithTimeFormatter.string(from: self.date))
+		return nil
 	}
 }
+

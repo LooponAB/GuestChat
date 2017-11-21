@@ -8,20 +8,15 @@
 
 import Foundation
 
-public class LooponChatMessage: LooponEvent
+open class LooponChatMessage: LooponEvent
 {
 	public var sessionId: String
-	public let created: LooponDateWithTime
+	public let created: LooponDate
 	public let type: LooponEventType
 
 	/// Unique identifier of this message. A message with the same `id` might be deliveredmore than once,
 	/// often because one/some of its details have been updated, such as the `updated` timestamp.
 	public let id: Int
-
-	/// Date when the chat message was updated. If the message was never updated, will be `nil`.
-	///
-	/// Includes milliseconds and original timezone.
-	public let updated: LooponDate?
 
 	/// Date when the chat message was read by the counterpart agent. If the message was never read, will be `nil`.
 	///
@@ -30,7 +25,19 @@ public class LooponChatMessage: LooponEvent
 
 	/// Id provided the the client that generated this message. Can be used to keep track of correct delivery without
 	/// relying on guesswork.
-	public let localId: String
+	public let localId: String?
+
+	/// Which interlocutor composed this message.
+	public let author: Author
+
+	/// User-displayable name of the author of this message.
+	public let authorName: String
+
+	/// If available, a URL for an avatar for the user.
+	public let authorAvatarUrl: URL?
+
+	/// Which media was used to send/receive this message.
+	public let media: Media
 
 	/// Content of message (valid for `text/plain` and `text/html`).
 	public let url: URL?
@@ -52,82 +59,92 @@ public class LooponChatMessage: LooponEvent
 																		  forKey: .chatMessage)
 
 		id = try chatEventContainer.decode(Swift.type(of: id), forKey: .id)
-		updated = try chatEventContainer.decode(Swift.type(of: updated), forKey: .updated)
 		read = try chatEventContainer.decode(Swift.type(of: read), forKey: .read)
 		localId = try chatEventContainer.decode(Swift.type(of: localId), forKey: .localId)
+		author = try chatEventContainer.decode(Swift.type(of: author), forKey: .author)
+		authorName = try chatEventContainer.decode(Swift.type(of: authorName), forKey: .authorName)
+		authorAvatarUrl = try chatEventContainer.decode(Swift.type(of: authorAvatarUrl), forKey: .authorAvatarUrl)
+		media = try chatEventContainer.decode(Swift.type(of: media), forKey: .media)
 		url = try chatEventContainer.decode(Swift.type(of: url), forKey: .url)
 		content = try chatEventContainer.decode(Swift.type(of: content), forKey: .content)
 		contentType = try chatEventContainer.decode(Swift.type(of: contentType), forKey: .contentType)
 	}
 
 	/// Creates a message event with a string.
-	public init(content: String, type: ContentType, localId: String? = nil)
+	public init(content: String, type: ContentType, sessionId: String, localId: String? = nil)
 	{
-		let created = LooponDateWithTime()
+		let created = LooponDate()
 
-		self.sessionId = ""
+		self.sessionId = sessionId
 		self.created = created
 		self.type = .chatMessage
 		self.id = 0
-		self.updated = nil
 		self.read = nil
 		self.url = nil
 		self.content = content
 		self.contentType = type
+		self.author = .guest
+		self.authorName = ""
+		self.authorAvatarUrl = nil
+		self.media = .webchat
+
 		self.localId = localId ?? "\(content)\(created.date.timeIntervalSince1970)\(arc4random())".sha256Hash.base64Encoded
 	}
 
-	/// Creates a message event with an attributed string.
-//	public init(content: NSAttributedString, type: ContentType, localId: String? = nil)
-//	{
-//		let created = LooponDateWithTime()
-//
-//		//		self.sessionId = ""
-//		self.created = created
-//		self.type = .chatMessage
-//		self.id = 0
-//		self.updated = nil
-//		self.read = nil
-//		self.url = nil
-//		self.content = content
-//		self.contentType = type
-//		self.localId = localId ?? "\(content)\(created.timeIntervalSince1970)\(arc4random())".sha256Hash.base64Encoded
-//	}
-
 	/// Creates a message event with a URL.
-	public init(url: URL, type: ContentType, localId: String? = nil)
+	public init(url: URL, type: ContentType, sessionId: String, localId: String? = nil)
 	{
-		let created = LooponDateWithTime()
+		let created = LooponDate()
 
-		self.sessionId = ""
+		self.sessionId = sessionId
 		self.created = created
 		self.type = .chatMessage
 		self.id = 0
-		self.updated = nil
 		self.read = nil
 		self.url = url
 		self.content = nil
 		self.contentType = type
+		self.author = .guest
+		self.authorName = ""
+		self.authorAvatarUrl = nil
+		self.media = .webchat
+
 		self.localId = localId ?? "\(url.absoluteString)\(created.date.timeIntervalSince1970)\(arc4random())".sha256Hash.base64Encoded
 	}
 
 	public func encode(to encoder: Encoder) throws
 	{
 		var looponEventContainer = encoder.container(keyedBy: CodingKeys.self)
-		try looponEventContainer.encode(sessionId, forKey: .sessionId)
-		try looponEventContainer.encode(created, forKey: .created)
 		try looponEventContainer.encode(type, forKey: .type)
 
 		var chatEventContainer = looponEventContainer.nestedContainer(keyedBy: ChatMessageKeys.self,
 																	  forKey: .chatMessage)
 
-		try chatEventContainer.encode(id, forKey: .id)
-		try chatEventContainer.encode(updated, forKey: .updated)
-		try chatEventContainer.encode(read, forKey: .read)
 		try chatEventContainer.encode(localId, forKey: .localId)
+		try chatEventContainer.encode(contentType, forKey: .contentType)
 		try chatEventContainer.encode(url, forKey: .url)
 		try chatEventContainer.encode(content, forKey: .content)
-		try chatEventContainer.encode(contentType, forKey: .contentType)
+	}
+
+	public enum Author: String, Codable
+	{
+		/// This is a message composed by the hotel.
+		case hotel
+
+		/// This is a message composed by the guest.
+		case guest
+	}
+
+	public enum Media: String, Codable
+	{
+		/// Message sent using SMS subsystem.
+		case sms
+
+		/// Message sent using facebook messenger subsystem.
+		case facebook
+
+		/// Message sent using Loopon chat.
+		case webchat
 	}
 
 	/// The mime type of the chat message contents.
@@ -173,11 +190,30 @@ public class LooponChatMessage: LooponEvent
 	enum ChatMessageKeys: String, CodingKey
 	{
 		case id
-		case updated
 		case read
 		case localId
+		case author
+		case authorName
+		case authorAvatarUrl
 		case url
 		case content
 		case contentType
+		case media
+	}
+}
+
+extension LooponChatMessage: Equatable
+{
+	public static func ==(lhs: LooponChatMessage, rhs: LooponChatMessage) -> Bool
+	{
+		return lhs.localId == rhs.localId
+	}
+}
+
+extension LooponChatMessage: Comparable
+{
+	public static func <(lhs: LooponChatMessage, rhs: LooponChatMessage) -> Bool
+	{
+		return lhs.created.date > rhs.created.date
 	}
 }
