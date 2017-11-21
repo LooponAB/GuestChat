@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D06C9051FC320D40086C7BC /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C9041FC320D40086C7BC /* Fetcher.swift */; };
 		0D2314F91FBF41EF008D7102 /* LooponKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2314F71FBF41EF008D7102 /* LooponKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D2314FC1FBF41EF008D7102 /* LooponKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2314F51FBF41EF008D7102 /* LooponKit.framework */; };
 		0D2314FD1FBF41EF008D7102 /* LooponKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2314F51FBF41EF008D7102 /* LooponKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -20,11 +21,16 @@
 		0D2315161FC2EDF5008D7102 /* LooponGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315151FC2EDF5008D7102 /* LooponGuest.swift */; };
 		0D2315181FC2EF4E008D7102 /* LooponGuestStay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315171FC2EF4E008D7102 /* LooponGuestStay.swift */; };
 		0D23151A1FC2F063008D7102 /* LooponChatSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315191FC2F063008D7102 /* LooponChatSession.swift */; };
+		0D322B961FC4593400BF757C /* LooponDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D322B951FC4593400BF757C /* LooponDate.swift */; };
+		0D44EFCF1FC7054D007273D3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D44EFCE1FC7054D007273D3 /* Secrets.swift */; };
+		0D44EFD01FC705AB007273D3 /* Secrets.example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D44EFCC1FC70436007273D3 /* Secrets.example.swift */; };
 		0D54FDDA1FBEF48D006FCF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54FDD91FBEF48D006FCF9B /* AppDelegate.swift */; };
 		0D54FDDC1FBEF48D006FCF9B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54FDDB1FBEF48D006FCF9B /* ChatViewController.swift */; };
 		0D54FDDF1FBEF48D006FCF9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D54FDDD1FBEF48D006FCF9B /* Main.storyboard */; };
 		0D54FDE11FBEF48D006FCF9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D54FDE01FBEF48D006FCF9B /* Assets.xcassets */; };
 		0D54FDE41FBEF48D006FCF9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D54FDE21FBEF48D006FCF9B /* LaunchScreen.storyboard */; };
+		0D59AFC31FC33B2300CAF389 /* LooponUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59AFC21FC33B2300CAF389 /* LooponUnit.swift */; };
+		0DAFFC951FC33D9000A3886A /* UnitPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFFC941FC33D9000A3886A /* UnitPickerViewController.swift */; };
 		0DBA00E61FBEF74E0094E509 /* ChatWow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D54FE431FBEF620006FCF9B /* ChatWow.framework */; };
 		0DBA00E71FBEF74E0094E509 /* ChatWow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D54FE431FBEF620006FCF9B /* ChatWow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DBA00EC1FBEF7E00094E509 /* SetupDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA00EB1FBEF7E00094E509 /* SetupDemoViewController.swift */; };
@@ -87,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		0829A343E790A8CEDA18CF52 /* Pods-GuestChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuestChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuestChat/Pods-GuestChat.release.xcconfig"; sourceTree = "<group>"; };
+		0D06C9041FC320D40086C7BC /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		0D2314F51FBF41EF008D7102 /* LooponKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LooponKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2314F71FBF41EF008D7102 /* LooponKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LooponKit.h; sourceTree = "<group>"; };
 		0D2314F81FBF41EF008D7102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +107,9 @@
 		0D2315151FC2EDF5008D7102 /* LooponGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponGuest.swift; sourceTree = "<group>"; };
 		0D2315171FC2EF4E008D7102 /* LooponGuestStay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponGuestStay.swift; sourceTree = "<group>"; };
 		0D2315191FC2F063008D7102 /* LooponChatSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponChatSession.swift; sourceTree = "<group>"; };
+		0D322B951FC4593400BF757C /* LooponDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponDate.swift; sourceTree = "<group>"; };
+		0D44EFCC1FC70436007273D3 /* Secrets.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.example.swift; sourceTree = "<group>"; };
+		0D44EFCE1FC7054D007273D3 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		0D54FDD61FBEF48D006FCF9B /* GuestChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuestChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D54FDD91FBEF48D006FCF9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D54FDDB1FBEF48D006FCF9B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +118,8 @@
 		0D54FDE31FBEF48D006FCF9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D54FDE51FBEF48D006FCF9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ChatWowDemo.xcodeproj; path = ChatWow/ChatWowDemo.xcodeproj; sourceTree = "<group>"; };
+		0D59AFC21FC33B2300CAF389 /* LooponUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponUnit.swift; sourceTree = "<group>"; };
+		0DAFFC941FC33D9000A3886A /* UnitPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPickerViewController.swift; sourceTree = "<group>"; };
 		0DBA00EB1FBEF7E00094E509 /* SetupDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDemoViewController.swift; sourceTree = "<group>"; };
 		2C681328C09B3002D38D09A7 /* Pods-LooponKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LooponKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LooponKit/Pods-LooponKit.debug.xcconfig"; sourceTree = "<group>"; };
 		830CB278DF07C0FE5AB461E1 /* Pods_GuestChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuestChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,10 +160,12 @@
 				0D2315131FC2ED9A008D7102 /* LooponErrorMessage.swift */,
 				0D2315151FC2EDF5008D7102 /* LooponGuest.swift */,
 				0D2315171FC2EF4E008D7102 /* LooponGuestStay.swift */,
+				0D59AFC21FC33B2300CAF389 /* LooponUnit.swift */,
 				0D2315191FC2F063008D7102 /* LooponChatSession.swift */,
 				0D23150D1FBF6BE8008D7102 /* LooponSocket.swift */,
 				0D2315111FC2E9FA008D7102 /* LooponAuthorization.swift */,
 				0D2315071FBF65EB008D7102 /* String+Hash.swift */,
+				0D322B951FC4593400BF757C /* LooponDate.swift */,
 			);
 			path = LooponKit;
 			sourceTree = "<group>";
@@ -180,14 +194,18 @@
 		0D54FDD81FBEF48D006FCF9B /* GuestChat */ = {
 			isa = PBXGroup;
 			children = (
+				0D44EFCC1FC70436007273D3 /* Secrets.example.swift */,
+				0D44EFCE1FC7054D007273D3 /* Secrets.swift */,
 				0D54FDD91FBEF48D006FCF9B /* AppDelegate.swift */,
 				0D54FDDB1FBEF48D006FCF9B /* ChatViewController.swift */,
 				0DBA00EB1FBEF7E00094E509 /* SetupDemoViewController.swift */,
+				0DAFFC941FC33D9000A3886A /* UnitPickerViewController.swift */,
+				0D23150F1FC2E8D0008D7102 /* HotelBackend.swift */,
+				0D06C9041FC320D40086C7BC /* Fetcher.swift */,
 				0D54FDDD1FBEF48D006FCF9B /* Main.storyboard */,
 				0D54FDE01FBEF48D006FCF9B /* Assets.xcassets */,
 				0D54FDE21FBEF48D006FCF9B /* LaunchScreen.storyboard */,
 				0D54FDE51FBEF48D006FCF9B /* Info.plist */,
-				0D23150F1FC2E8D0008D7102 /* HotelBackend.swift */,
 			);
 			path = GuestChat;
 			sourceTree = "<group>";
@@ -463,6 +481,8 @@
 			files = (
 				0D23151A1FC2F063008D7102 /* LooponChatSession.swift in Sources */,
 				0D2315181FC2EF4E008D7102 /* LooponGuestStay.swift in Sources */,
+				0D322B961FC4593400BF757C /* LooponDate.swift in Sources */,
+				0D59AFC31FC33B2300CAF389 /* LooponUnit.swift in Sources */,
 				0D2315041FBF493D008D7102 /* LooponChatMessage.swift in Sources */,
 				0D2315141FC2ED9A008D7102 /* LooponErrorMessage.swift in Sources */,
 				0D23150E1FBF6BE8008D7102 /* LooponSocket.swift in Sources */,
@@ -477,7 +497,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D06C9051FC320D40086C7BC /* Fetcher.swift in Sources */,
+				0D44EFCF1FC7054D007273D3 /* Secrets.swift in Sources */,
 				0D54FDDC1FBEF48D006FCF9B /* ChatViewController.swift in Sources */,
+				0D44EFD01FC705AB007273D3 /* Secrets.example.swift in Sources */,
+				0DAFFC951FC33D9000A3886A /* UnitPickerViewController.swift in Sources */,
 				0D2315101FC2E8D0008D7102 /* HotelBackend.swift in Sources */,
 				0DBA00EC1FBEF7E00094E509 /* SetupDemoViewController.swift in Sources */,
 				0D54FDDA1FBEF48D006FCF9B /* AppDelegate.swift in Sources */,

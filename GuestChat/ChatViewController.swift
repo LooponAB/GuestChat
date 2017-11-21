@@ -8,20 +8,33 @@
 
 import UIKit
 import ChatWow
+import LooponKit
 
 class ChatViewController: ChatWowViewController
 {
-	private var demoData: SetupDemoViewController.DemoData? = nil
+	private var guestStay: LooponGuestStay? = nil
+	{
+		didSet
+		{
+			title = "Chat: \(guestStay?.guest?.name ?? "Anonymous")"
+		}
+	}
+
+	private var demoData: HotelBackend.StayPayload? = nil
 	{
 		didSet
 		{
 			if demoData != nil
 			{
-				clearChatLog()
+				startChat()
+				inputController.isEnabled = true
+				inputController.setPlaceholder("Type here to chat")
 			}
 			else
 			{
-				startChat()
+				clearChatLog()
+				inputController.isEnabled = false
+				inputController.setPlaceholder("Tap “Setup” to start")
 			}
 		}
 	}
@@ -30,6 +43,8 @@ class ChatViewController: ChatWowViewController
 	{
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+
+		demoData = nil
 	}
 
 	override func viewDidAppear(_ animated: Bool)
@@ -71,7 +86,36 @@ class ChatViewController: ChatWowViewController
 
 	private func startChat()
 	{
+		guard let demoData = self.demoData else
+		{
+			return
+		}
 
+		do
+		{
+			try AppDelegate.instance.hotelBackend.postStay(guestData: demoData)
+				{
+					[weak self] response in
+
+					switch response
+					{
+					case .success(let stay):
+						self?.guestStay = stay
+					case .error(let error, let data):
+						print("Could not register guest stay! \(error)")
+
+						if let data = data
+						{
+							let bodyString = String(data: data, encoding: .utf8) ?? data.description
+							print("Failed because: \(bodyString)")
+						}
+					}
+				}
+		}
+		catch
+		{
+			print("Could not register guest stay! \(error)")
+		}
 	}
 }
 

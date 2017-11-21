@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import LooponKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
 	var window: UIWindow?
+	var hotelBackend = HotelBackend(clientId: Secrets.clientId, secret: Secrets.clientSecret)
+	var units: [LooponUnit]? = nil
 
+	static var instance: AppDelegate
+	{
+		return UIApplication.shared.delegate as! AppDelegate
+	}
 
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+	{
 		// Override point for customization after application launch.
+		hotelBackend.delegate = self
+
 		return true
 	}
 
@@ -40,7 +50,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
+}
 
+extension AppDelegate: HotelBackendDelegate
+{
+	func hotelBackedDidAuthorize(_ hotelBackend: HotelBackend)
+	{
+		do
+		{
+			try hotelBackend.getUnits
+			{
+				response in
 
+				switch response
+				{
+				case .success(let units):
+					self.units = units
+
+				case .error(let error, _):
+					print("Could not fetch units! \(error)")
+				}
+			}
+		}
+		catch
+		{
+			print("Could not fetch units! \(error)")
+		}
+	}
 }
 

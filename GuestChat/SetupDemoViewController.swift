@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import LooponKit
 
 class SetupDemoViewController: UITableViewController
 {
+	private var pickedUnit: LooponUnit? = nil
+
+	private lazy var dateFormatter: DateFormatter =
+	{
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeStyle = .none
+		dateFormatter.dateStyle = .medium
+		return dateFormatter
+	}()
+
+	@IBOutlet weak var labelUnitName: UILabel!
 	@IBOutlet weak var textFieldGuestName: UITextField!
 	@IBOutlet weak var textFieldRoomNumber: UITextField!
 	@IBOutlet weak var textFieldBookingReference: UITextField!
@@ -19,11 +31,11 @@ class SetupDemoViewController: UITableViewController
 	@IBOutlet weak var textFieldCheckoutDate: UITextField!
 	@IBOutlet weak var segmentedControlJourneyStage: UISegmentedControl!
 
-	var doneCallback: ((DemoData) -> Void)? = nil
-
-	var demoData: DemoData?
+	var doneCallback: ((HotelBackend.StayPayload) -> Void)? = nil
+	var demoData: HotelBackend.StayPayload?
 	{
 		guard
+			let unitId = pickedUnit?.unitId,
 			let checkinDate = textFieldCheckinDate.dateValue,
 			let checkoutDate = textFieldCheckoutDate.dateValue,
 			let journeyStage = segmentedControlJourneyStage.guestJourneyValue
@@ -32,23 +44,18 @@ class SetupDemoViewController: UITableViewController
 			return nil
 		}
 
-		return DemoData(guestName: textFieldGuestName.stringValue,
-						roomNumber: textFieldRoomNumber.stringValue,
-						bookingRef: textFieldBookingReference.stringValue,
-						email: textFieldEmail.stringValue,
-						phone: textFieldPhone.stringValue,
-						checkinDate: checkinDate,
-						checkoutDate: checkoutDate,
-						journeyStage: journeyStage)
+		return HotelBackend.StayPayload(unitId: unitId,
+										name: textFieldGuestName.stringValue,
+										room: textFieldRoomNumber.stringValue,
+										bookingReference: textFieldBookingReference.stringValue,
+										email: textFieldEmail.stringValue,
+										mobile: textFieldPhone.stringValue,
+										language: "en",
+										bookingDate: LooponDate(),
+										checkinDate: LooponDate(date: checkinDate),
+										checkoutDate: LooponDate(date: checkoutDate),
+										status: journeyStage)
 	}
-
-	private lazy var dateFormatter: DateFormatter =
-		{
-			let dateFormatter = DateFormatter()
-			dateFormatter.timeStyle = .none
-			dateFormatter.dateStyle = .medium
-			return dateFormatter
-		}()
 
 	override func viewDidLoad()
 	{
@@ -74,6 +81,13 @@ class SetupDemoViewController: UITableViewController
 		didChangeDatePicker(checkoutDatePicker)
 	}
 
+	override func viewWillAppear(_ animated: Bool)
+	{
+		super.viewWillAppear(animated)
+
+		labelUnitName.text = pickedUnit?.name ?? "No Unit Selected"
+	}
+
 	@objc private func didChangeDatePicker(_ sender: UIDatePicker?)
 	{
 		if sender === textFieldCheckinDate.inputView, let date = sender?.date
@@ -91,26 +105,19 @@ class SetupDemoViewController: UITableViewController
 		if let demoData = self.demoData
 		{
 			doneCallback?(demoData)
-			dismiss(animated: true, completion: nil)
 		}
+
+		dismiss(animated: true, completion: nil)
 	}
 
-	struct DemoData
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?)
 	{
-		let guestName: String
-		let roomNumber: String
-		let bookingRef: String
-		let email: String
-		let phone: String
-		let checkinDate: Date
-		let checkoutDate: Date
-		let journeyStage: JourneyStage
-
-		enum JourneyStage: Int
+		if segue.identifier == "PickUnit", let controller = segue.destination as? UnitPickerViewController
 		{
-			case preStay = 0
-			case inStay = 1
-			case postSTay = 2
+			controller.selectionCallback =
+				{
+					[weak self] pickedUnit in self?.pickedUnit = pickedUnit
+				}
 		}
 	}
 }
@@ -130,8 +137,8 @@ extension UITextField
 
 extension UISegmentedControl
 {
-	var guestJourneyValue: SetupDemoViewController.DemoData.JourneyStage?
+	var guestJourneyValue: HotelBackend.StayPayload.JourneyStage?
 	{
-		return SetupDemoViewController.DemoData.JourneyStage(rawValue: selectedSegmentIndex)
+		return HotelBackend.StayPayload.JourneyStage(rawValue: selectedSegmentIndex)
 	}
 }
