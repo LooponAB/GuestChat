@@ -11,8 +11,9 @@ import Foundation
 public class LooponErrorMessage: LooponEvent
 {
 	public var sessionId: String
-	public let created: Date
+	public let created: LooponDateWithTime
 	public let type: LooponEventType
 
+	/// The error message as provided by the server.
 	public let errorMessage: String
 }

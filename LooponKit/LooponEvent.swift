@@ -17,7 +17,7 @@ public protocol LooponEvent: Codable
 	/// Date and time when the event was initially created.
 	///
 	/// Includes milliseconds and original timezone.
-	var created: Date { get }
+	var created: LooponDateWithTime { get }
 
 	/// Identifier of the type of event, which defines the rest of the content of the LooponEvent.
 	var type: LooponEventType { get }

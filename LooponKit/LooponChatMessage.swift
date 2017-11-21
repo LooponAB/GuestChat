@@ -11,7 +11,7 @@ import Foundation
 public class LooponChatMessage: LooponEvent
 {
 	public var sessionId: String
-	public let created: Date
+	public let created: LooponDateWithTime
 	public let type: LooponEventType
 
 	/// Unique identifier of this message. A message with the same `id` might be deliveredmore than once,
@@ -21,12 +21,12 @@ public class LooponChatMessage: LooponEvent
 	/// Date when the chat message was updated. If the message was never updated, will be `nil`.
 	///
 	/// Includes milliseconds and original timezone.
-	public let updated: Date?
+	public let updated: LooponDate?
 
 	/// Date when the chat message was read by the counterpart agent. If the message was never read, will be `nil`.
 	///
 	/// Includes milliseconds and original timezone.
-	public let read: Date?
+	public let read: LooponDate?
 
 	/// Id provided the the client that generated this message. Can be used to keep track of correct delivery without
 	/// relying on guesswork.
@@ -63,7 +63,7 @@ public class LooponChatMessage: LooponEvent
 	/// Creates a message event with a string.
 	public init(content: String, type: ContentType, localId: String? = nil)
 	{
-		let created = Date()
+		let created = LooponDateWithTime()
 
 		self.sessionId = ""
 		self.created = created
@@ -74,13 +74,13 @@ public class LooponChatMessage: LooponEvent
 		self.url = nil
 		self.content = content
 		self.contentType = type
-		self.localId = localId ?? "\(content)\(created.timeIntervalSince1970)\(arc4random())".sha256Hash.base64Encoded
+		self.localId = localId ?? "\(content)\(created.date.timeIntervalSince1970)\(arc4random())".sha256Hash.base64Encoded
 	}
 
 	/// Creates a message event with an attributed string.
 //	public init(content: NSAttributedString, type: ContentType, localId: String? = nil)
 //	{
-//		let created = Date()
+//		let created = LooponDateWithTime()
 //
 //		//		self.sessionId = ""
 //		self.created = created
@@ -97,7 +97,7 @@ public class LooponChatMessage: LooponEvent
 	/// Creates a message event with a URL.
 	public init(url: URL, type: ContentType, localId: String? = nil)
 	{
-		let created = Date()
+		let created = LooponDateWithTime()
 
 		self.sessionId = ""
 		self.created = created
@@ -108,7 +108,7 @@ public class LooponChatMessage: LooponEvent
 		self.url = url
 		self.content = nil
 		self.contentType = type
-		self.localId = localId ?? "\(url.absoluteString)\(created.timeIntervalSince1970)\(arc4random())".sha256Hash.base64Encoded
+		self.localId = localId ?? "\(url.absoluteString)\(created.date.timeIntervalSince1970)\(arc4random())".sha256Hash.base64Encoded
 	}
 
 	public func encode(to encoder: Encoder) throws

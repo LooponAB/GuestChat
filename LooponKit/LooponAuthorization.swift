@@ -33,4 +33,9 @@ public struct LooponAuthorization: Codable
 		case expiresIn = "expires_in"
 		case accessToken = "access_token"
 	}
+
+	public var httpHeaderValue: String
+	{
+		return "\(tokenType) \(accessToken)"
+	}
 }

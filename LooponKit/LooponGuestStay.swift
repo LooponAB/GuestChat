@@ -24,16 +24,19 @@ public class LooponGuestStay: Decodable
 	public let bookingReference: String?
 
 	/// Date when stay was booked given in ISO 8601 format.
-	public let bookingDate: String?
+	public let bookingDate: LooponDate?
 
 	/// Arrival date.
-	public let checkinDate: Date?
+	public let checkinDate: LooponDate?
 
 	/// Departure date.
-	public let checkoutDate: Date?
+	public let checkoutDate: LooponDate?
 
 	/// Guest's room number.
 	public let room: String?
+
+	/// ISO 639-1 representation of the language the guest prefers to speak. This is a per-stay option.
+	public let language: String
 
 	/// The guest associated with this stay. Can be null for anonymous/un-identified stays.
 	public let guest: LooponGuest?
