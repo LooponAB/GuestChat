@@ -164,8 +164,8 @@
 				0D2315191FC2F063008D7102 /* LooponChatSession.swift */,
 				0D23150D1FBF6BE8008D7102 /* LooponSocket.swift */,
 				0D2315111FC2E9FA008D7102 /* LooponAuthorization.swift */,
-				0D2315071FBF65EB008D7102 /* String+Hash.swift */,
 				0D322B951FC4593400BF757C /* LooponDate.swift */,
+				0D2315071FBF65EB008D7102 /* String+Hash.swift */,
 			);
 			path = LooponKit;
 			sourceTree = "<group>";

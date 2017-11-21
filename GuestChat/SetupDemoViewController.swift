@@ -51,9 +51,9 @@ class SetupDemoViewController: UITableViewController
 										email: textFieldEmail.stringValue,
 										mobile: textFieldPhone.stringValue,
 										language: "en",
-										bookingDate: LooponDate(),
-										checkinDate: LooponDate(date: checkinDate),
-										checkoutDate: LooponDate(date: checkoutDate),
+										bookingDate: LooponDate(formatMode: .dateOnly),
+										checkinDate: LooponDate(date: checkinDate, formatMode: .dateOnly),
+										checkoutDate: LooponDate(date: checkoutDate, formatMode: .dateOnly),
 										status: journeyStage)
 	}
 
@@ -105,6 +105,10 @@ class SetupDemoViewController: UITableViewController
 		if let demoData = self.demoData
 		{
 			doneCallback?(demoData)
+		}
+		else
+		{
+			print("Did not produce demo data!!!")
 		}
 
 		dismiss(animated: true, completion: nil)
