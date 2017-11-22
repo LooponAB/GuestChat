@@ -6,11 +6,5 @@ target 'GuestChat' do
   use_frameworks!
 
   # Pods for GuestChat
-
-end
-
-target 'LooponKit' do
-  use_frameworks!
-
-  pod 'SocketRocket', '~> 0.5'
+  pod 'LooponKit', :git => 'https://github.com/LooponAB/LooponKit.git'
 end

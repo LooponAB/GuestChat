@@ -1,0 +1,34 @@
+{
+  "name": "LooponKit",
+  "version": "0.1",
+  "summary": "iOS Library fo Loopon's Public API",
+  "description": "This library contains models, connectors, and helper functions that allow an iOS App to easily communicate with Loopon's Public API.",
+  "homepage": "https://github.com/LooponAB/LooponKit",
+  "license": {
+    "type": "BSD",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Loopon AB": "support@loopon.com"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/LooponAB/LooponKit.git",
+    "tag": "0.1"
+  },
+  "source_files": [
+    "LooponKit",
+    "LooponKit/*"
+  ],
+  "preserve_paths": "LooponKit/CommonCrypto/module.map",
+  "xcconfig": {
+    "SWIFT_INCLUDE_PATHS": "LooponKit/LooponKit/CommonCrypto"
+  },
+  "dependencies": {
+    "SocketRocket": [
+      "~> 0.5"
+    ]
+  }
+}

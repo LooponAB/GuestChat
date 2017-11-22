@@ -27,6 +27,7 @@ class SetupDemoViewController: UITableViewController
 	@IBOutlet weak var textFieldBookingReference: UITextField!
 	@IBOutlet weak var textFieldEmail: UITextField!
 	@IBOutlet weak var textFieldPhone: UITextField!
+	@IBOutlet weak var textFieldBookingDate: UITextField!
 	@IBOutlet weak var textFieldCheckinDate: UITextField!
 	@IBOutlet weak var textFieldCheckoutDate: UITextField!
 	@IBOutlet weak var segmentedControlJourneyStage: UISegmentedControl!
@@ -36,6 +37,7 @@ class SetupDemoViewController: UITableViewController
 	{
 		guard
 			let unitId = pickedUnit?.unitId,
+			let bookingDate = textFieldBookingDate.dateValue,
 			let checkinDate = textFieldCheckinDate.dateValue,
 			let checkoutDate = textFieldCheckoutDate.dateValue,
 			let journeyStage = segmentedControlJourneyStage.guestJourneyValue
@@ -51,7 +53,7 @@ class SetupDemoViewController: UITableViewController
 										email: textFieldEmail.stringValue,
 										mobile: textFieldPhone.stringValue,
 										language: "en",
-										bookingDate: LooponDate(formatMode: .dateOnly),
+										bookingDate: LooponDate(date: bookingDate, formatMode: .dateOnly),
 										checkinDate: LooponDate(date: checkinDate, formatMode: .dateOnly),
 										checkoutDate: LooponDate(date: checkoutDate, formatMode: .dateOnly),
 										status: journeyStage)
@@ -64,8 +66,14 @@ class SetupDemoViewController: UITableViewController
 		let today = Date()
 		let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today
 
+		let bookingDatePicker = UIDatePicker()
+		bookingDatePicker.setDate(today, animated: false)
+		bookingDatePicker.datePickerMode = .date
+		bookingDatePicker.addTarget(self, action: #selector(SetupDemoViewController.didChangeDatePicker(_:)), for: .valueChanged)
+		textFieldBookingDate.inputView = bookingDatePicker
+		didChangeDatePicker(bookingDatePicker)
+
 		let checkinDatePicker = UIDatePicker()
-		checkinDatePicker.minimumDate = today
 		checkinDatePicker.setDate(today, animated: false)
 		checkinDatePicker.datePickerMode = .date
 		checkinDatePicker.addTarget(self, action: #selector(SetupDemoViewController.didChangeDatePicker(_:)), for: .valueChanged)
@@ -90,13 +98,29 @@ class SetupDemoViewController: UITableViewController
 
 	@objc private func didChangeDatePicker(_ sender: UIDatePicker?)
 	{
-		if sender === textFieldCheckinDate.inputView, let date = sender?.date
+		if sender === textFieldBookingDate.inputView, let bookingDate = sender?.date
 		{
-			textFieldCheckinDate.text = dateFormatter.string(from: date)
+			textFieldBookingDate.text = dateFormatter.string(from: bookingDate)
+
+			if let checkinPicker = textFieldCheckinDate.inputView as? UIDatePicker
+			{
+				checkinPicker.minimumDate = bookingDate
+				didChangeDatePicker(checkinPicker)
+			}
 		}
-		else if sender === textFieldCheckoutDate.inputView, let date = sender?.date
+		else if sender === textFieldCheckinDate.inputView, let checkinDate = sender?.date
 		{
-			textFieldCheckoutDate.text = dateFormatter.string(from: date)
+			textFieldCheckinDate.text = dateFormatter.string(from: checkinDate)
+
+			if let checkoutPicker = textFieldCheckoutDate.inputView as? UIDatePicker
+			{
+				checkoutPicker.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: checkinDate)
+				didChangeDatePicker(checkoutPicker)
+			}
+		}
+		else if sender === textFieldCheckoutDate.inputView, let checkoutDate = sender?.date
+		{
+			textFieldCheckoutDate.text = dateFormatter.string(from: checkoutDate)
 		}
 	}
 

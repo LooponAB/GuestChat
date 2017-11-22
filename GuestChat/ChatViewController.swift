@@ -129,9 +129,9 @@ class ChatViewController: ChatWowViewController
 
 	private func startChat()
 	{
-		if let stay = guestStay, let chatURL = URL(string: stay.chatSession.wssUrl)
+		if let stay = guestStay
 		{
-			chatSocket.url = chatURL
+			chatSocket.url = stay.chatSession.wssUrl
 			title = "Chat Connecting"
 		}
 	}
@@ -212,14 +212,8 @@ extension ChatViewController: ChatWowDelegate
 
 	func chatController(_ chatController: ChatWowViewController, didInsertMessage message: String)
 	{
-		guard let sessionId = guestStay?.chatSession.sessionId else
-		{
-			showAlert(message: "There doesn't seem to be an initialized chat session.", title: "Error")
-			return
-		}
-
-		let newMessage = PendingChatMessage(content: message.trimmingCharacters(in: .whitespacesAndNewlines),
-											type: .plainText, sessionId: sessionId)
+		let trimmedMessage = message.trimmingCharacters(in: .whitespacesAndNewlines)
+		let newMessage = PendingChatMessage(content: trimmedMessage, type: .plainText)
 
 		insert(pendingChatMessage: newMessage)
 
@@ -291,6 +285,21 @@ extension ChatViewController: LooponSocketDelegate
 			insert(chatMessage: chatMessage)
 		}
 	}
+
+	func looponSocket(_ socket: LooponSocket, received errorMessage: LooponErrorMessage)
+	{
+
+	}
+
+	func looponSocket(_ socket: LooponSocket, received typingIndicator: LooponTypingIndicator)
+	{
+
+	}
+
+	func looponSocket(_ socket: LooponSocket, producedError error: Error)
+	{
+
+	}
 }
 
 extension LooponChatMessage
@@ -337,7 +346,7 @@ extension Array where Element: Comparable
 	}
 }
 
-extension LooponChatMessage.Author
+extension LooponComposer
 {
 	var side: InterlocutorSide
 	{

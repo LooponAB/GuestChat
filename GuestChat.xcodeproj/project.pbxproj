@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D06C9051FC320D40086C7BC /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C9041FC320D40086C7BC /* Fetcher.swift */; };
-		0D2314F91FBF41EF008D7102 /* LooponKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2314F71FBF41EF008D7102 /* LooponKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D2314FC1FBF41EF008D7102 /* LooponKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2314F51FBF41EF008D7102 /* LooponKit.framework */; };
-		0D2314FD1FBF41EF008D7102 /* LooponKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2314F51FBF41EF008D7102 /* LooponKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0D2315021FBF4201008D7102 /* LooponEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315011FBF4201008D7102 /* LooponEvent.swift */; };
-		0D2315041FBF493D008D7102 /* LooponChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315031FBF493D008D7102 /* LooponChatMessage.swift */; };
-		0D2315081FBF65EB008D7102 /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315071FBF65EB008D7102 /* String+Hash.swift */; };
-		0D23150E1FBF6BE8008D7102 /* LooponSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D23150D1FBF6BE8008D7102 /* LooponSocket.swift */; };
 		0D2315101FC2E8D0008D7102 /* HotelBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D23150F1FC2E8D0008D7102 /* HotelBackend.swift */; };
 		0D2315121FC2E9FA008D7102 /* LooponAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315111FC2E9FA008D7102 /* LooponAuthorization.swift */; };
 		0D2315141FC2ED9A008D7102 /* LooponErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315131FC2ED9A008D7102 /* LooponErrorMessage.swift */; };
@@ -29,23 +22,14 @@
 		0D54FDDF1FBEF48D006FCF9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D54FDDD1FBEF48D006FCF9B /* Main.storyboard */; };
 		0D54FDE11FBEF48D006FCF9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D54FDE01FBEF48D006FCF9B /* Assets.xcassets */; };
 		0D54FDE41FBEF48D006FCF9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D54FDE21FBEF48D006FCF9B /* LaunchScreen.storyboard */; };
-		0D59AFC31FC33B2300CAF389 /* LooponUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59AFC21FC33B2300CAF389 /* LooponUnit.swift */; };
 		0DAFFC951FC33D9000A3886A /* UnitPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFFC941FC33D9000A3886A /* UnitPickerViewController.swift */; };
 		0DBA00E61FBEF74E0094E509 /* ChatWow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D54FE431FBEF620006FCF9B /* ChatWow.framework */; };
 		0DBA00E71FBEF74E0094E509 /* ChatWow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D54FE431FBEF620006FCF9B /* ChatWow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DBA00EC1FBEF7E00094E509 /* SetupDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA00EB1FBEF7E00094E509 /* SetupDemoViewController.swift */; };
 		32E6674D179F80BC22ABC058 /* Pods_GuestChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830CB278DF07C0FE5AB461E1 /* Pods_GuestChat.framework */; };
-		B8A1719EE0861616E9A03B76 /* Pods_LooponKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEA3AD20698C2EA51E3DA9D /* Pods_LooponKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0D2314FA1FBF41EF008D7102 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D54FDCE1FBEF48D006FCF9B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D2314F41FBF41EF008D7102;
-			remoteInfo = LooponKit;
-		};
 		0D54FE401FBEF620006FCF9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */;
@@ -83,7 +67,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0D2314FD1FBF41EF008D7102 /* LooponKit.framework in Embed Frameworks */,
 				0DBA00E71FBEF74E0094E509 /* ChatWow.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -94,13 +77,6 @@
 /* Begin PBXFileReference section */
 		0829A343E790A8CEDA18CF52 /* Pods-GuestChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuestChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuestChat/Pods-GuestChat.release.xcconfig"; sourceTree = "<group>"; };
 		0D06C9041FC320D40086C7BC /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		0D2314F51FBF41EF008D7102 /* LooponKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LooponKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D2314F71FBF41EF008D7102 /* LooponKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LooponKit.h; sourceTree = "<group>"; };
-		0D2314F81FBF41EF008D7102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D2315011FBF4201008D7102 /* LooponEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponEvent.swift; sourceTree = "<group>"; };
-		0D2315031FBF493D008D7102 /* LooponChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponChatMessage.swift; sourceTree = "<group>"; };
-		0D2315071FBF65EB008D7102 /* String+Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
-		0D23150D1FBF6BE8008D7102 /* LooponSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponSocket.swift; sourceTree = "<group>"; };
 		0D23150F1FC2E8D0008D7102 /* HotelBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelBackend.swift; sourceTree = "<group>"; };
 		0D2315111FC2E9FA008D7102 /* LooponAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponAuthorization.swift; sourceTree = "<group>"; };
 		0D2315131FC2ED9A008D7102 /* LooponErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponErrorMessage.swift; sourceTree = "<group>"; };
@@ -118,7 +94,6 @@
 		0D54FDE31FBEF48D006FCF9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D54FDE51FBEF48D006FCF9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ChatWowDemo.xcodeproj; path = ChatWow/ChatWowDemo.xcodeproj; sourceTree = "<group>"; };
-		0D59AFC21FC33B2300CAF389 /* LooponUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponUnit.swift; sourceTree = "<group>"; };
 		0DAFFC941FC33D9000A3886A /* UnitPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPickerViewController.swift; sourceTree = "<group>"; };
 		0DBA00EB1FBEF7E00094E509 /* SetupDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDemoViewController.swift; sourceTree = "<group>"; };
 		2C681328C09B3002D38D09A7 /* Pods-LooponKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LooponKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LooponKit/Pods-LooponKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,19 +104,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0D2314F11FBF41EF008D7102 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B8A1719EE0861616E9A03B76 /* Pods_LooponKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0D54FDD31FBEF48D006FCF9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D2314FC1FBF41EF008D7102 /* LooponKit.framework in Frameworks */,
 				0DBA00E61FBEF74E0094E509 /* ChatWow.framework in Frameworks */,
 				32E6674D179F80BC22ABC058 /* Pods_GuestChat.framework in Frameworks */,
 			);
@@ -150,32 +116,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D2314F61FBF41EF008D7102 /* LooponKit */ = {
-			isa = PBXGroup;
-			children = (
-				0D2314F71FBF41EF008D7102 /* LooponKit.h */,
-				0D2314F81FBF41EF008D7102 /* Info.plist */,
-				0D2315011FBF4201008D7102 /* LooponEvent.swift */,
-				0D2315031FBF493D008D7102 /* LooponChatMessage.swift */,
-				0D2315131FC2ED9A008D7102 /* LooponErrorMessage.swift */,
-				0D2315151FC2EDF5008D7102 /* LooponGuest.swift */,
-				0D2315171FC2EF4E008D7102 /* LooponGuestStay.swift */,
-				0D59AFC21FC33B2300CAF389 /* LooponUnit.swift */,
-				0D2315191FC2F063008D7102 /* LooponChatSession.swift */,
-				0D23150D1FBF6BE8008D7102 /* LooponSocket.swift */,
-				0D2315111FC2E9FA008D7102 /* LooponAuthorization.swift */,
-				0D322B951FC4593400BF757C /* LooponDate.swift */,
-				0D2315071FBF65EB008D7102 /* String+Hash.swift */,
-			);
-			path = LooponKit;
-			sourceTree = "<group>";
-		};
 		0D54FDCD1FBEF48D006FCF9B = {
 			isa = PBXGroup;
 			children = (
 				0D54FDD81FBEF48D006FCF9B /* GuestChat */,
 				0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */,
-				0D2314F61FBF41EF008D7102 /* LooponKit */,
 				0D54FDD71FBEF48D006FCF9B /* Products */,
 				3A50A9957EA28BA91A8A6C7C /* Pods */,
 				4DD5998FC14CD6520FDE338E /* Frameworks */,
@@ -186,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				0D54FDD61FBEF48D006FCF9B /* GuestChat.app */,
-				0D2314F51FBF41EF008D7102 /* LooponKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,38 +186,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		0D2314F21FBF41EF008D7102 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D2314F91FBF41EF008D7102 /* LooponKit.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		0D2314F41FBF41EF008D7102 /* LooponKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0D2314FE1FBF41EF008D7102 /* Build configuration list for PBXNativeTarget "LooponKit" */;
-			buildPhases = (
-				C02C27716B15C81D1E455FA7 /* [CP] Check Pods Manifest.lock */,
-				0D2314F01FBF41EF008D7102 /* Sources */,
-				0D2314F11FBF41EF008D7102 /* Frameworks */,
-				0D2314F21FBF41EF008D7102 /* Headers */,
-				0D2314F31FBF41EF008D7102 /* Resources */,
-				D5C95DACF5FD8F0736F8826F /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LooponKit;
-			productName = LooponKit;
-			productReference = 0D2314F51FBF41EF008D7102 /* LooponKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		0D54FDD51FBEF48D006FCF9B /* GuestChat */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D54FDE81FBEF48D006FCF9B /* Build configuration list for PBXNativeTarget "GuestChat" */;
@@ -290,7 +203,6 @@
 			);
 			dependencies = (
 				0DBA00E91FBEF74E0094E509 /* PBXTargetDependency */,
-				0D2314FB1FBF41EF008D7102 /* PBXTargetDependency */,
 			);
 			name = GuestChat;
 			productName = GuestChat;
@@ -307,11 +219,6 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Loopon AB";
 				TargetAttributes = {
-					0D2314F41FBF41EF008D7102 = {
-						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 0910;
-						ProvisioningStyle = Automatic;
-					};
 					0D54FDD51FBEF48D006FCF9B = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -338,7 +245,6 @@
 			projectRoot = "";
 			targets = (
 				0D54FDD51FBEF48D006FCF9B /* GuestChat */,
-				0D2314F41FBF41EF008D7102 /* LooponKit */,
 			);
 		};
 /* End PBXProject section */
@@ -368,13 +274,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0D2314F31FBF41EF008D7102 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0D54FDD41FBEF48D006FCF9B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,39 +320,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C02C27716B15C81D1E455FA7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LooponKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D5C95DACF5FD8F0736F8826F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LooponKit/Pods-LooponKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E7B946CB601625C76090EE00 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,10 +327,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GuestChat/Pods-GuestChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LooponKit/LooponKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LooponKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,24 +343,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0D2314F01FBF41EF008D7102 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D23151A1FC2F063008D7102 /* LooponChatSession.swift in Sources */,
-				0D2315181FC2EF4E008D7102 /* LooponGuestStay.swift in Sources */,
-				0D322B961FC4593400BF757C /* LooponDate.swift in Sources */,
-				0D59AFC31FC33B2300CAF389 /* LooponUnit.swift in Sources */,
-				0D2315041FBF493D008D7102 /* LooponChatMessage.swift in Sources */,
-				0D2315141FC2ED9A008D7102 /* LooponErrorMessage.swift in Sources */,
-				0D23150E1FBF6BE8008D7102 /* LooponSocket.swift in Sources */,
-				0D2315021FBF4201008D7102 /* LooponEvent.swift in Sources */,
-				0D2315161FC2EDF5008D7102 /* LooponGuest.swift in Sources */,
-				0D2315121FC2E9FA008D7102 /* LooponAuthorization.swift in Sources */,
-				0D2315081FBF65EB008D7102 /* String+Hash.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0D54FDD21FBEF48D006FCF9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -511,11 +361,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0D2314FB1FBF41EF008D7102 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0D2314F41FBF41EF008D7102 /* LooponKit */;
-			targetProxy = 0D2314FA1FBF41EF008D7102 /* PBXContainerItemProxy */;
-		};
 		0DBA00E91FBEF74E0094E509 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ChatWow;
@@ -543,61 +388,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0D2314FF1FBF41EF008D7102 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C681328C09B3002D38D09A7 /* Pods-LooponKit.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6KYJ233SU6;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LooponKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.loopon.LooponKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = LooponKit/CommonCrypto;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0D2315001FBF41EF008D7102 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB718DFD285E5D243083460F /* Pods-LooponKit.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6KYJ233SU6;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LooponKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.loopon.LooponKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = LooponKit/CommonCrypto;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		0D54FDE61FBEF48D006FCF9B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -742,15 +532,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D2314FE1FBF41EF008D7102 /* Build configuration list for PBXNativeTarget "LooponKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0D2314FF1FBF41EF008D7102 /* Debug */,
-				0D2315001FBF41EF008D7102 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0D54FDD11FBEF48D006FCF9B /* Build configuration list for PBXProject "GuestChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

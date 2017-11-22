@@ -1,0 +1,6 @@
+framework module LooponKit {
+  umbrella header "LooponKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

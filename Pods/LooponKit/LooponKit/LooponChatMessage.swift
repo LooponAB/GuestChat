@@ -3,11 +3,34 @@
 //  LooponKit
 //
 //  Created by Bruno Resende on 17/11/2017.
-//  Copyright © 2017 Loopon AB. All rights reserved.
+//  Copyright © 2017 Loopon AB
+//  API Documentation: https://api.loopon.com/public
+//  Contact us at support@loopon.com
+//  
+//  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the 
+//  following conditions are met:
+//  
+//  1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+//  disclaimer.
+//  
+//  2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the 
+//  following disclaimer in the documentation and/or other materials provided with the distribution.
+//  
+//  3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote
+//  products derived from this software without specific prior written permission.
+//  
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+//  INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+//  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+//  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+//  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
 import Foundation
 
+/// Describes a chat message written either by the guest or the hotel.
 open class LooponChatMessage: LooponEvent
 {
 	public var sessionId: String
@@ -28,7 +51,7 @@ open class LooponChatMessage: LooponEvent
 	public let localId: String?
 
 	/// Which interlocutor composed this message.
-	public let author: Author
+	public let author: LooponComposer
 
 	/// User-displayable name of the author of this message.
 	public let authorName: String
@@ -39,10 +62,10 @@ open class LooponChatMessage: LooponEvent
 	/// Which media was used to send/receive this message.
 	public let media: Media
 
-	/// Content of message (valid for `text/plain` and `text/html`).
+	/// Fully qualified URL to content data (valid for `image/png`, `image/gif` and `image/jpeg`) content types.
 	public let url: URL?
 
-	/// Fully qualified URL to content data (valid for `image/png`, `image/gif` and `image/jpeg`) content types.
+	/// Content of message (valid for `text/plain` and `text/html`).
 	public let content: String?
 
 	/// Describes the type of content included in this chat message.
@@ -71,11 +94,11 @@ open class LooponChatMessage: LooponEvent
 	}
 
 	/// Creates a message event with a string.
-	public init(content: String, type: ContentType, sessionId: String, localId: String? = nil)
+	public init(content: String, type: ContentType, localId: String? = nil)
 	{
 		let created = LooponDate()
 
-		self.sessionId = sessionId
+		self.sessionId = ""
 		self.created = created
 		self.type = .chatMessage
 		self.id = 0
@@ -92,11 +115,11 @@ open class LooponChatMessage: LooponEvent
 	}
 
 	/// Creates a message event with a URL.
-	public init(url: URL, type: ContentType, sessionId: String, localId: String? = nil)
+	public init(url: URL, type: ContentType, localId: String? = nil)
 	{
 		let created = LooponDate()
 
-		self.sessionId = sessionId
+		self.sessionId = ""
 		self.created = created
 		self.type = .chatMessage
 		self.id = 0
@@ -126,15 +149,6 @@ open class LooponChatMessage: LooponEvent
 		try chatEventContainer.encode(content, forKey: .content)
 	}
 
-	public enum Author: String, Codable
-	{
-		/// This is a message composed by the hotel.
-		case hotel
-
-		/// This is a message composed by the guest.
-		case guest
-	}
-
 	public enum Media: String, Codable
 	{
 		/// Message sent using SMS subsystem.
@@ -145,6 +159,12 @@ open class LooponChatMessage: LooponEvent
 
 		/// Message sent using Loopon chat.
 		case webchat
+
+		/// Message sent though the public API.
+		case appchat
+
+		/// Message sent through email.
+		case email
 	}
 
 	/// The mime type of the chat message contents.
