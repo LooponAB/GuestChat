@@ -94,6 +94,11 @@ open class LooponChatMessage: LooponEvent
 	}
 
 	/// Creates a message event with a string.
+	///
+	/// - Parameters:
+	///   - content: The string contents of this message.
+	///   - type: The content type of this message.
+	///   - localId: Unique ID for this message. If not provided, one is calculated automatically.
 	public init(content: String, type: ContentType, localId: String? = nil)
 	{
 		let created = LooponDate()
@@ -114,7 +119,12 @@ open class LooponChatMessage: LooponEvent
 		self.localId = localId ?? "\(content)\(created.date.timeIntervalSince1970)\(arc4random())".sha256Hash.base64Encoded
 	}
 
-	/// Creates a message event with a URL.
+	/// Creates a message event with an URL.
+	///
+	/// - Parameters:
+	///   - content: The fully qualified URL for the contents of this message.
+	///   - type: The content type of this message.
+	///   - localId: Unique ID for this message. If not provided, one is calculated automatically.
 	public init(url: URL, type: ContentType, localId: String? = nil)
 	{
 		let created = LooponDate()

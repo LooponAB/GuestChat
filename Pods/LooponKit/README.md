@@ -11,6 +11,24 @@ This library contains models, connectors, and helper functions that allow an iOS
 * Model classes for API objects.
 * LooponSocket: Helper class to connect to the Loopon Chat websocket.
 
+## Installing
+
+### CocoaPods
+
+Add this framework to your project using CocoaPods. Add the following line to your Podfile:
+
+```
+pod 'LooponKit', :git => 'https://github.com/LooponAB/LooponKit.git'
+```
+
+### Compiling from source
+
+This repo includes all files you need to compile this project with Xcode. Just open the `LooponKit.xcworkspace` file and press ⌘B to build the framework.
+
+To build for release, select "Generic iOS Device" from the Device list, and select Product > Archive from the menu.
+
+Open the Organizer (Select "Window > Organizer" from the Menu), select "LooponKit" under "Other Items" in the sidebar, then click "Export". Select "Build Products" and click "Next". Select a location then click "Export". Navigating into the selected location you will find the LooponKit.framework file built for release.
+
 ## Examples
 
 ### Creating a Guest Stay
@@ -103,6 +121,9 @@ func sendMessage(_ text: String)
 	do
 	{
 		try self.chatSocket.send(chatMessage: message)
+		
+		// Add to pending messages
+		self.pendingMessages.append(message)
 	}
 	catch
 	{
@@ -113,7 +134,24 @@ func sendMessage(_ text: String)
 
 You should display the message as "pending" to the user, for now.
 
-If and when the message is sent successfully, you will receive it back in the socket through the `looponSocket:receivedChatMessage:` delegate method. Only then you should "commit" the message in the UI, and store it locally if you are going to cache messages locally.
+If and when the message is sent successfully, you will receive it back in the socket through the `looponSocket:receivedChatMessage:` delegate method. Only then you should "commit" the message in the UI, and store it locally if you are going to cache messages locally:
+
+```swift
+func looponSocket(_ socket: LooponSocket, received chatMessage: LooponChatMessage)
+{
+	// Check if we sent this message, by looking for a pending message with the same `localId`.
+	if let receivedLocalId = chatMessage.localId, let pendingMessage = pendingMessages.first(where: { $0.localId == receivedLocalId })
+	{
+		// "Commit" the message, that is, mark it as "sent".
+		commit(pendingMessage, with: chatMessage)
+	}
+	else
+	{
+		// This message was sent from some other client. Jut add it to your chat log UI.
+		add(chatMessage)
+	}
+}
+```
 
 ## License
 

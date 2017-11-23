@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -102,7 +102,7 @@
 		120FFD05FF3EB5F4914C0D0D8E6B2070 /* LooonTypingIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LooonTypingIndicator.swift; path = LooponKit/LooonTypingIndicator.swift; sourceTree = "<group>"; };
 		127DA1469D2D1961BD5790111869C8D1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		147140FC05F8CAE685EFA9B8881859E5 /* Pods-GuestChat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GuestChat-acknowledgements.plist"; sourceTree = "<group>"; };
-		158BDCFE746A8268D2F14C2074A12791 /* SocketRocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SocketRocket.modulemap; sourceTree = "<group>"; };
+		158BDCFE746A8268D2F14C2074A12791 /* SocketRocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SocketRocket.modulemap; sourceTree = "<group>"; };
 		1AF935E92E3AE738EBDD1F8403ABBB87 /* SocketRocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SocketRocket-dummy.m"; sourceTree = "<group>"; };
 		1CA106E7F955DA72AA485A07625854D4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F20C9FFBCBD925EF6D6CC45816A1CDA /* ChatMessageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageView.swift; path = ChatWow/ChatMessageView.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		21094C03608E0C1AB04627FFA03B761E /* SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-prefix.pch"; sourceTree = "<group>"; };
 		2875D88A5268ACCAEF8CB8E33F53C283 /* SocketRocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-umbrella.h"; sourceTree = "<group>"; };
 		288AA02E4D838FB9195D245CE8407E89 /* ChatEmojiMessageMine.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ChatEmojiMessageMine.xib; path = ChatWow/ChatEmojiMessageMine.xib; sourceTree = "<group>"; };
-		2AE8074947224D26D55B45DF67944830 /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AE8074947224D26D55B45DF67944830 /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SocketRocket.framework; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFBE2D13C02929236A800ECFC837BC7 /* ChatKeyboardHelperView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatKeyboardHelperView.swift; path = ChatWow/ChatKeyboardHelperView.swift; sourceTree = "<group>"; };
 		2EAC97FCDB532002AA4073A4D04F9A00 /* Pods-GuestChat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GuestChat-acknowledgements.markdown"; sourceTree = "<group>"; };
 		31992B9615C2A768C31520D44C871252 /* Pods-GuestChat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GuestChat-umbrella.h"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		3DA385925352FAD4BFD29AF0BB14AD5B /* SRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
 		3F50F22163386FD4509E5793C1FEDEE9 /* LooponAuthorization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LooponAuthorization.swift; path = LooponKit/LooponAuthorization.swift; sourceTree = "<group>"; };
 		4357A8AFA8436D0600A01E168B59259E /* ChatTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatTableView.swift; path = ChatWow/ChatTableView.swift; sourceTree = "<group>"; };
-		436DE99E786375FBB613EC0D965F7274 /* LooponKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LooponKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		436DE99E786375FBB613EC0D965F7274 /* LooponKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LooponKit.framework; path = LooponKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		461C7D76EB7DC8D62C1AF220A9AB6C84 /* ChatEmojiMessageTheirs.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ChatEmojiMessageTheirs.xib; path = ChatWow/ChatEmojiMessageTheirs.xib; sourceTree = "<group>"; };
 		492EFAF162F545C8F79190C032A7B75A /* ChatWow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChatWow.h; path = ChatWow/ChatWow.h; sourceTree = "<group>"; };
 		4C6CEA7F57AA69E75EB4255DE01E1A4F /* LooponGuest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LooponGuest.swift; path = LooponKit/LooponGuest.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		69611B364E7E15231DF2511CC4BAA9CD /* SocketRocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SocketRocket.h; path = SocketRocket/SocketRocket.h; sourceTree = "<group>"; };
 		70C63DCB3305014E095372C4DE8DBC10 /* SocketRocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SocketRocket.xcconfig; sourceTree = "<group>"; };
 		74DC010C47E9FA387B0FFF34A493D0A2 /* Pods-GuestChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuestChat.release.xcconfig"; sourceTree = "<group>"; };
-		7E4D448EE5B8EEA8478F6A18981CFB76 /* LooponKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LooponKit.modulemap; sourceTree = "<group>"; };
+		7E4D448EE5B8EEA8478F6A18981CFB76 /* LooponKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LooponKit.modulemap; sourceTree = "<group>"; };
 		7FDF6505C49584E5CBC515CB8E3E8224 /* ChatInputViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ChatInputViewController.xib; path = ChatWow/ChatInputViewController.xib; sourceTree = "<group>"; };
 		81F8530D7E9B73F4AE3351862305E079 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		8516FF07741F6506CDDD8BCAED554697 /* LooponErrorMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LooponErrorMessage.swift; path = LooponKit/LooponErrorMessage.swift; sourceTree = "<group>"; };
@@ -144,10 +144,10 @@
 		8A0CE59CBE65EF44CAF545AEA3ADDCA2 /* ChatWow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChatWow-dummy.m"; sourceTree = "<group>"; };
 		8B2E6838DBA8F56D5911253729AFF9B6 /* ChatImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatImageView.swift; path = ChatWow/ChatImageView.swift; sourceTree = "<group>"; };
 		8B4FB972C2197590ABE2C956365E8FEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8C00A13206DC53843009F858BECFDFD1 /* ChatWow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ChatWow.modulemap; sourceTree = "<group>"; };
+		8C00A13206DC53843009F858BECFDFD1 /* ChatWow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ChatWow.modulemap; sourceTree = "<group>"; };
 		8DA867005E6812FAE889210D5BD6EC77 /* ChatImageMine.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ChatImageMine.xib; path = ChatWow/ChatImageMine.xib; sourceTree = "<group>"; };
 		906731841778B1EDBE9F74E4ABAB927F /* String+Hash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Hash.swift"; path = "LooponKit/String+Hash.swift"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A1A05D822BBFB2E25D3657B831F260E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		9A46DB1DE12B8D44AC3819DE34C81662 /* ChatMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessage.swift; path = ChatWow/ChatMessage.swift; sourceTree = "<group>"; };
 		9CB58918CDC3B0A1250B80B565874C5C /* ChatBubbleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatBubbleView.swift; path = ChatWow/ChatBubbleView.swift; sourceTree = "<group>"; };
@@ -158,16 +158,16 @@
 		B0FEA434FEF44D1E8B67BD00504D8EE5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B754FF69111DBCABA7966E3AF29D559E /* ChatInfoLineCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ChatInfoLineCell.xib; path = ChatWow/ChatInfoLineCell.xib; sourceTree = "<group>"; };
 		BD4DC8131B6317D64E9246F689A4EB92 /* ChatMessageMine.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ChatMessageMine.xib; path = ChatWow/ChatMessageMine.xib; sourceTree = "<group>"; };
-		BDAD2BA900A21CEB281E8A475C8E52C2 /* ChatWow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChatWow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDAD2BA900A21CEB281E8A475C8E52C2 /* ChatWow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChatWow.framework; path = ChatWow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0636A136E77A5FEB7BA4DF3CCDF8709 /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
 		CA242B39BCF843C72213F325210C7C08 /* LooponChatMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LooponChatMessage.swift; path = LooponKit/LooponChatMessage.swift; sourceTree = "<group>"; };
-		CC8A1A1C62BF5D561568070A8BFF4ECD /* Pods_GuestChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuestChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC8A1A1C62BF5D561568070A8BFF4ECD /* Pods_GuestChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GuestChat.framework; path = "Pods-GuestChat.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50AD2938C2CF05BA3B20409695DF683 /* ChatWow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChatWow-umbrella.h"; sourceTree = "<group>"; };
 		D9C7077905B45AFC2A67BCB1A22C4DB7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB09CB3939D4FAC6DF6536763254648F /* ChatInputViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatInputViewController.swift; path = ChatWow/ChatInputViewController.swift; sourceTree = "<group>"; };
 		F3DF193A1DBADC8433DC56B5A0F0A46F /* Pods-GuestChat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GuestChat-dummy.m"; sourceTree = "<group>"; };
 		FCDA22AE094D2EB9BE2E80B3D7CE0305 /* LooponEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LooponEvent.swift; path = LooponKit/LooponEvent.swift; sourceTree = "<group>"; };
-		FE702C2B00805BF35D69D974DFE65A62 /* Pods-GuestChat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GuestChat.modulemap"; sourceTree = "<group>"; };
+		FE702C2B00805BF35D69D974DFE65A62 /* Pods-GuestChat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-GuestChat.modulemap"; sourceTree = "<group>"; };
 		FF4C1762996D9F5FED71DEAD1B83BDF7 /* ChatWow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChatWow-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +227,7 @@
 				C0636A136E77A5FEB7BA4DF3CCDF8709 /* SRWebSocket.m */,
 				51C337A656BE55DEC1D81C94E9EDC712 /* Support Files */,
 			);
+			name = SocketRocket;
 			path = SocketRocket;
 			sourceTree = "<group>";
 		};
@@ -289,6 +290,7 @@
 				906731841778B1EDBE9F74E4ABAB927F /* String+Hash.swift */,
 				21C010794E47FA56C88F89097FC7129C /* Support Files */,
 			);
+			name = LooponKit;
 			path = LooponKit;
 			sourceTree = "<group>";
 		};
@@ -378,6 +380,7 @@
 				641D74A5253EE63AA1D1C542B42376B5 /* Resources */,
 				7AA8698B9972A12EA24BFEB7C7A9291E /* Support Files */,
 			);
+			name = ChatWow;
 			path = ChatWow;
 			sourceTree = "<group>";
 		};
@@ -521,7 +524,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -702,7 +705,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
-				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				INFOPLIST_FILE = "Target Support Files/SocketRocket/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -804,9 +806,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -814,21 +814,15 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -896,9 +890,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -906,20 +898,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -933,7 +919,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -994,7 +979,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
-				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				INFOPLIST_FILE = "Target Support Files/SocketRocket/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

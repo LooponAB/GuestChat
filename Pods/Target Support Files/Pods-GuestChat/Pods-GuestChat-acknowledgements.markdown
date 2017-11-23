@@ -36,6 +36,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## LooponKit
 
+BSD 3-clause License
+
 Copyright 2017 Loopon AB
 
 Redistribution and use in source and binary forms, with or without modification,

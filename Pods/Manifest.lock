@@ -19,7 +19,7 @@ CHECKOUT OPTIONS:
     :commit: 5fef92e66eaf852b8d5be722b5e1ce7cf565b771
     :git: https://github.com/LooponAB/ChatWow.git
   LooponKit:
-    :commit: ba0ebd501def61c6f0a116b3fea7bdda4853571f
+    :commit: bb94ffb707ad088712838b8020b87dc7f9a7b729
     :git: https://github.com/LooponAB/LooponKit.git
 
 SPEC CHECKSUMS:
