@@ -7,4 +7,5 @@ target 'GuestChat' do
 
   # Pods for GuestChat
   pod 'LooponKit', :git => 'https://github.com/LooponAB/LooponKit.git'
+  pod 'ChatWow', :git => 'https://github.com/LooponAB/ChatWow.git'
 end

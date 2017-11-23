@@ -102,10 +102,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/ChatWow/ChatWow.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LooponKit/LooponKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/ChatWow/ChatWow.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LooponKit/LooponKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework"
 fi

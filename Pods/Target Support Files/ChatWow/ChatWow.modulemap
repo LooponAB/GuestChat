@@ -1,0 +1,6 @@
+framework module ChatWow {
+  umbrella header "ChatWow-umbrella.h"
+
+  export *
+  module * { export * }
+}

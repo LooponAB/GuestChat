@@ -23,42 +23,9 @@
 		0D54FDE11FBEF48D006FCF9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D54FDE01FBEF48D006FCF9B /* Assets.xcassets */; };
 		0D54FDE41FBEF48D006FCF9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D54FDE21FBEF48D006FCF9B /* LaunchScreen.storyboard */; };
 		0DAFFC951FC33D9000A3886A /* UnitPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFFC941FC33D9000A3886A /* UnitPickerViewController.swift */; };
-		0DBA00E61FBEF74E0094E509 /* ChatWow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D54FE431FBEF620006FCF9B /* ChatWow.framework */; };
-		0DBA00E71FBEF74E0094E509 /* ChatWow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D54FE431FBEF620006FCF9B /* ChatWow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DBA00EC1FBEF7E00094E509 /* SetupDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA00EB1FBEF7E00094E509 /* SetupDemoViewController.swift */; };
 		32E6674D179F80BC22ABC058 /* Pods_GuestChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830CB278DF07C0FE5AB461E1 /* Pods_GuestChat.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0D54FE401FBEF620006FCF9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D03D4781F7A5C99009FF81E;
-			remoteInfo = ChatWowDemo;
-		};
-		0D54FE421FBEF620006FCF9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D03D4921F7A5CB4009FF81E;
-			remoteInfo = ChatWow;
-		};
-		0D54FE441FBEF620006FCF9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D03D49A1F7A5CB4009FF81E;
-			remoteInfo = ChatWowTests;
-		};
-		0DBA00E81FBEF74E0094E509 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D03D4911F7A5CB4009FF81E;
-			remoteInfo = ChatWow;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0DBA00EA1FBEF74E0094E509 /* Embed Frameworks */ = {
@@ -67,7 +34,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0DBA00E71FBEF74E0094E509 /* ChatWow.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,7 +59,6 @@
 		0D54FDE01FBEF48D006FCF9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D54FDE31FBEF48D006FCF9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D54FDE51FBEF48D006FCF9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ChatWowDemo.xcodeproj; path = ChatWow/ChatWowDemo.xcodeproj; sourceTree = "<group>"; };
 		0DAFFC941FC33D9000A3886A /* UnitPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPickerViewController.swift; sourceTree = "<group>"; };
 		0DBA00EB1FBEF7E00094E509 /* SetupDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDemoViewController.swift; sourceTree = "<group>"; };
 		2C681328C09B3002D38D09A7 /* Pods-LooponKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LooponKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LooponKit/Pods-LooponKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DBA00E61FBEF74E0094E509 /* ChatWow.framework in Frameworks */,
 				32E6674D179F80BC22ABC058 /* Pods_GuestChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				0D54FDD81FBEF48D006FCF9B /* GuestChat */,
-				0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */,
 				0D54FDD71FBEF48D006FCF9B /* Products */,
 				3A50A9957EA28BA91A8A6C7C /* Pods */,
 				4DD5998FC14CD6520FDE338E /* Frameworks */,
@@ -152,16 +115,6 @@
 				0D54FDE51FBEF48D006FCF9B /* Info.plist */,
 			);
 			path = GuestChat;
-			sourceTree = "<group>";
-		};
-		0D54FE3B1FBEF620006FCF9B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0D54FE411FBEF620006FCF9B /* ChatWowDemo.app */,
-				0D54FE431FBEF620006FCF9B /* ChatWow.framework */,
-				0D54FE451FBEF620006FCF9B /* ChatWowTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		3A50A9957EA28BA91A8A6C7C /* Pods */ = {
@@ -202,7 +155,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0DBA00E91FBEF74E0094E509 /* PBXTargetDependency */,
 			);
 			name = GuestChat;
 			productName = GuestChat;
@@ -236,42 +188,12 @@
 			mainGroup = 0D54FDCD1FBEF48D006FCF9B;
 			productRefGroup = 0D54FDD71FBEF48D006FCF9B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0D54FE3B1FBEF620006FCF9B /* Products */;
-					ProjectRef = 0D54FE3A1FBEF620006FCF9B /* ChatWowDemo.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				0D54FDD51FBEF48D006FCF9B /* GuestChat */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0D54FE411FBEF620006FCF9B /* ChatWowDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ChatWowDemo.app;
-			remoteRef = 0D54FE401FBEF620006FCF9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D54FE431FBEF620006FCF9B /* ChatWow.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ChatWow.framework;
-			remoteRef = 0D54FE421FBEF620006FCF9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D54FE451FBEF620006FCF9B /* ChatWowTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChatWowTests.xctest;
-			remoteRef = 0D54FE441FBEF620006FCF9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0D54FDD41FBEF48D006FCF9B /* Resources */ = {
@@ -327,11 +249,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GuestChat/Pods-GuestChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChatWow/ChatWow.framework",
 				"${BUILT_PRODUCTS_DIR}/LooponKit/LooponKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChatWow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LooponKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
 			);
@@ -359,14 +283,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0DBA00E91FBEF74E0094E509 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ChatWow;
-			targetProxy = 0DBA00E81FBEF74E0094E509 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0D54FDDD1FBEF48D006FCF9B /* Main.storyboard */ = {

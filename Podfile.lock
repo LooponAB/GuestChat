@@ -1,24 +1,32 @@
 PODS:
+  - ChatWow (0.1)
   - LooponKit (0.1):
     - SocketRocket (~> 0.5)
   - SocketRocket (0.5.1)
 
 DEPENDENCIES:
+  - ChatWow (from `https://github.com/LooponAB/ChatWow.git`)
   - LooponKit (from `https://github.com/LooponAB/LooponKit.git`)
 
 EXTERNAL SOURCES:
+  ChatWow:
+    :git: https://github.com/LooponAB/ChatWow.git
   LooponKit:
     :git: https://github.com/LooponAB/LooponKit.git
 
 CHECKOUT OPTIONS:
+  ChatWow:
+    :commit: 5fef92e66eaf852b8d5be722b5e1ce7cf565b771
+    :git: https://github.com/LooponAB/ChatWow.git
   LooponKit:
     :commit: ba0ebd501def61c6f0a116b3fea7bdda4853571f
     :git: https://github.com/LooponAB/LooponKit.git
 
 SPEC CHECKSUMS:
+  ChatWow: 9ba1d5b1f20a94bbf5fdfb26aa75c2a70bc21673
   LooponKit: cb1f7fb0dc805d4816a6746197a77b98f86e8b47
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: 1dafaf3d80504f1d68ddab978e7e5b066d3c938e
+PODFILE CHECKSUM: 90d730b175d292d61f69fddd7dd998d32056f46a
 
 COCOAPODS: 1.3.1

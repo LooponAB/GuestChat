@@ -1,0 +1,26 @@
+{
+  "name": "ChatWow",
+  "version": "0.1",
+  "summary": "Chat UI framework for iOS.",
+  "description": "Provides all the basic UI elements necessary to implement a chat interface.",
+  "homepage": "https://github.com/LooponAB/ChatWow",
+  "license": {
+    "type": "BSD",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Loopon AB": "support@loopon.com"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/LooponAB/ChatWow.git",
+    "tag": "0.1"
+  },
+  "source_files": [
+    "ChatWow",
+    "ChatWow/*.{swift,h,xib}"
+  ],
+  "resources": "ChatWow/*.xcassets"
+}
