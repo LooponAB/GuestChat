@@ -1,10 +1,8 @@
 # GuestChat
 
-----
-
 Demo App using LooponKit and ChatWow to provide a chat session for hotel guests.
 
---
+---
 
 This project is mean for Loopon partners who are embedding support for Loopon Chat into their apps. In order to use this app properly, you will need an OAuth2 client–id and secret.
 
