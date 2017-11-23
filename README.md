@@ -4,11 +4,11 @@ Demo App using LooponKit and ChatWow to provide a chat session for hotel guests.
 
 ---
 
-This project is mean for Loopon partners who are embedding support for Loopon Chat into their apps. In order to use this app properly, you will need an OAuth2 client–id and secret.
+This project is meant for Loopon partners who are embedding support for Loopon Chat into their apps. In order to use this app properly, you will need an OAuth2 client–id and secret.
 
 If you are interested into bringing Loopon Chat into your hospitality App, contact us at [sales@loopon.com](mailto:sales@loopon.com).
 
-If you are already a Loopon partner and is having difficulties using this demo, get in touch with us at [support@loopon.com](mailto:support@loopon.com).
+If you are already a Loopon partner and are having difficulties using this demo, get in touch with us at [support@loopon.com](mailto:support@loopon.com).
 
 ## Running this Project
 
@@ -53,4 +53,41 @@ Select a Unit by tapping the "No Unit Selected" row.
 
 Fill in the details of the guest. The only required field is the status, or "Journey Stage", which is always pre-selected as "Pre–Stay".
 
-When you're done, tap "Done". The app should return to the Chat view. It will then automatically register the guest and start the App. If it works, the title of the view will change to the authorized guest's name. If nothing happens, check the error log in Xcode.
+When you're done, tap "Done". The app should return to the Chat view. It will then automatically register the guest and start the chat session. If it works, the title of the view will change to the authorized guest's name. If nothing happens, check the error log in Xcode.
+
+## Important‼️
+
+**Do not** use the `HotelBackend` class in a production environment. It is meant only to simulate the Hotel's app backend so that the App runs properly. In a real App, the Hotel's backend should register the guest stay and provide the stay object back to the App, and the App should communicate with Loopon's servers only through the chat websocket.
+
+## License
+
+```
+BSD 3-clause License
+
+Copyright 2017 Loopon AB
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
