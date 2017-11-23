@@ -7,14 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D06C9051FC320D40086C7BC /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C9041FC320D40086C7BC /* Fetcher.swift */; };
+		0D06C9051FC320D40086C7BC /* DecodableFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C9041FC320D40086C7BC /* DecodableFetcher.swift */; };
 		0D2315101FC2E8D0008D7102 /* HotelBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D23150F1FC2E8D0008D7102 /* HotelBackend.swift */; };
-		0D2315121FC2E9FA008D7102 /* LooponAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315111FC2E9FA008D7102 /* LooponAuthorization.swift */; };
-		0D2315141FC2ED9A008D7102 /* LooponErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315131FC2ED9A008D7102 /* LooponErrorMessage.swift */; };
-		0D2315161FC2EDF5008D7102 /* LooponGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315151FC2EDF5008D7102 /* LooponGuest.swift */; };
-		0D2315181FC2EF4E008D7102 /* LooponGuestStay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315171FC2EF4E008D7102 /* LooponGuestStay.swift */; };
-		0D23151A1FC2F063008D7102 /* LooponChatSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2315191FC2F063008D7102 /* LooponChatSession.swift */; };
-		0D322B961FC4593400BF757C /* LooponDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D322B951FC4593400BF757C /* LooponDate.swift */; };
 		0D44EFCF1FC7054D007273D3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D44EFCE1FC7054D007273D3 /* Secrets.swift */; };
 		0D44EFD01FC705AB007273D3 /* Secrets.example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D44EFCC1FC70436007273D3 /* Secrets.example.swift */; };
 		0D54FDDA1FBEF48D006FCF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54FDD91FBEF48D006FCF9B /* AppDelegate.swift */; };
@@ -42,14 +36,8 @@
 
 /* Begin PBXFileReference section */
 		0829A343E790A8CEDA18CF52 /* Pods-GuestChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuestChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuestChat/Pods-GuestChat.release.xcconfig"; sourceTree = "<group>"; };
-		0D06C9041FC320D40086C7BC /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		0D06C9041FC320D40086C7BC /* DecodableFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableFetcher.swift; sourceTree = "<group>"; };
 		0D23150F1FC2E8D0008D7102 /* HotelBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelBackend.swift; sourceTree = "<group>"; };
-		0D2315111FC2E9FA008D7102 /* LooponAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponAuthorization.swift; sourceTree = "<group>"; };
-		0D2315131FC2ED9A008D7102 /* LooponErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponErrorMessage.swift; sourceTree = "<group>"; };
-		0D2315151FC2EDF5008D7102 /* LooponGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponGuest.swift; sourceTree = "<group>"; };
-		0D2315171FC2EF4E008D7102 /* LooponGuestStay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponGuestStay.swift; sourceTree = "<group>"; };
-		0D2315191FC2F063008D7102 /* LooponChatSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponChatSession.swift; sourceTree = "<group>"; };
-		0D322B951FC4593400BF757C /* LooponDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooponDate.swift; sourceTree = "<group>"; };
 		0D44EFCC1FC70436007273D3 /* Secrets.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.example.swift; sourceTree = "<group>"; };
 		0D44EFCE1FC7054D007273D3 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		0D54FDD61FBEF48D006FCF9B /* GuestChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuestChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D44EFD11FC70CB0007273D3 /* Hotel Backend Mockup */ = {
+			isa = PBXGroup;
+			children = (
+				0D23150F1FC2E8D0008D7102 /* HotelBackend.swift */,
+			);
+			path = "Hotel Backend Mockup";
+			sourceTree = "<group>";
+		};
 		0D54FDCD1FBEF48D006FCF9B = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +97,14 @@
 		0D54FDD81FBEF48D006FCF9B /* GuestChat */ = {
 			isa = PBXGroup;
 			children = (
+				0D44EFD11FC70CB0007273D3 /* Hotel Backend Mockup */,
 				0D44EFCC1FC70436007273D3 /* Secrets.example.swift */,
 				0D44EFCE1FC7054D007273D3 /* Secrets.swift */,
 				0D54FDD91FBEF48D006FCF9B /* AppDelegate.swift */,
 				0D54FDDB1FBEF48D006FCF9B /* ChatViewController.swift */,
 				0DBA00EB1FBEF7E00094E509 /* SetupDemoViewController.swift */,
 				0DAFFC941FC33D9000A3886A /* UnitPickerViewController.swift */,
-				0D23150F1FC2E8D0008D7102 /* HotelBackend.swift */,
-				0D06C9041FC320D40086C7BC /* Fetcher.swift */,
+				0D06C9041FC320D40086C7BC /* DecodableFetcher.swift */,
 				0D54FDDD1FBEF48D006FCF9B /* Main.storyboard */,
 				0D54FDE01FBEF48D006FCF9B /* Assets.xcassets */,
 				0D54FDE21FBEF48D006FCF9B /* LaunchScreen.storyboard */,
@@ -271,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D06C9051FC320D40086C7BC /* Fetcher.swift in Sources */,
+				0D06C9051FC320D40086C7BC /* DecodableFetcher.swift in Sources */,
 				0D44EFCF1FC7054D007273D3 /* Secrets.swift in Sources */,
 				0D54FDDC1FBEF48D006FCF9B /* ChatViewController.swift in Sources */,
 				0D44EFD01FC705AB007273D3 /* Secrets.example.swift in Sources */,

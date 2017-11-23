@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  DecodableFetcher.swift
 //  GuestChat
 //
 //  Created by Bruno Resende on 20/11/2017.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Fetcher
+class DecodableFetcher
 {
-	internal func fetchRequest<T: Decodable>(_ request: URLRequest, _ callback: @escaping (Response<T>) -> Void)
+	internal func fetchDecodable<T: Decodable>(with request: URLRequest, _ callback: @escaping (Response<T>) -> Void)
 	{
 		let task = URLSession.shared.dataTask(with: request)
 		{

@@ -14,7 +14,7 @@ protocol HotelBackendDelegate: class
 	func hotelBackedDidAuthorize(_ hotelBackend: HotelBackend)
 }
 
-class HotelBackend: Fetcher
+class HotelBackend: DecodableFetcher
 {
 	static private let looponBaseUrl = "https://api.loopon.com/"
 
@@ -66,24 +66,24 @@ class HotelBackend: Fetcher
 
 	func getUnits(callback: @escaping (Response<[LooponUnit]>) -> Void) throws
 	{
-		fetchRequest(try makeRequest(path: "public/units"), callback)
+		fetchDecodable(with: try makeRequest(path: "public/units"), callback)
 	}
 
 	func getUnits(with propertyCode: String, callback: @escaping (Response<[LooponUnit]>) -> Void) throws
 	{
-		fetchRequest(try makeRequest(path: "public/units", urlParameters: ["propertyCode": propertyCode]), callback)
+		fetchDecodable(with: try makeRequest(path: "public/units", urlParameters: ["propertyCode": propertyCode]), callback)
 	}
 
 	func getUnits(with unitId: Int, callback: @escaping (Response<LooponUnit>) -> Void) throws
 	{
-		fetchRequest(try makeRequest(path: "public/unit/\(unitId)"), callback)
+		fetchDecodable(with: try makeRequest(path: "public/unit/\(unitId)"), callback)
 	}
 
 	func postStay(guestData: StayPayload, callback: @escaping (Response<LooponGuestStay>) -> Void) throws
 	{
 		let bodyData = try JSONEncoder().encode(guestData)
 
-		fetchRequest(try makeRequest(path: "public/units/\(guestData.unitId)/stays", method: .post(bodyData)), callback)
+		fetchDecodable(with: try makeRequest(path: "public/units/\(guestData.unitId)/stays", method: .post(bodyData)), callback)
 	}
 
 	struct StayPayload: Encodable
@@ -191,6 +191,6 @@ class HotelBackend: Fetcher
 		authorizationRequest.httpBody = bodyParameters.asData
 		authorizationRequest.httpMethod = "POST"
 
-		fetchRequest(authorizationRequest, callback)
+		fetchDecodable(with: authorizationRequest, callback)
 	}
 }
