@@ -14,6 +14,10 @@ protocol HotelBackendDelegate: class
 	func hotelBackedDidAuthorize(_ hotelBackend: HotelBackend)
 }
 
+/// This clss simulates the Hotel's App Backend. It talks to Loopon's servers and registers guest stays.
+/// In a real production App, this entire logic shold be in the Hotel's backend, and the App should only talk
+/// to Loopon via the websocket.
+@available(*, deprecated: 1.0, message: "Do not include this functionality in the front-end in a production app; keep secret key in your backend instead.")
 class HotelBackend: DecodableFetcher
 {
 	static private let looponBaseUrl = "https://api.loopon.com/"
